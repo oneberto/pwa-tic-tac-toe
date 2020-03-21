@@ -1,16 +1,18 @@
 import React, { useState, useCallback } from "react";
 
-// Assets
-import { GameContainer, GameWrapper } from "./styles";
+// screens
+import SelectCharacter from "../SelectCharacter";
+import Game from "../Game";
 
-// Helpers
+// assets
+import { Wrapper } from "./styles";
 import { ThemeColors } from "../../assets/colors";
-
-// Components
 import ChangeColor from "../../components/ChangeColor";
-import Hash from "../../components/Hash";
+import { Container } from "../../assets/global";
+import Character from "../../assets/characteres";
 
-const Game = () => {
+const Main = () => {
+    const [selectedCharacter, setSelectedCharacter] = useState<Character>();
     const [backgroundColor, setBackgroundColor] = useState<ThemeColors>(
         ThemeColors.Black
     );
@@ -32,18 +34,25 @@ const Game = () => {
         }
     }, []);
 
+    const handleSelectCharacter = useCallback((chracter: Character) => {
+        setSelectedCharacter(chracter);
+    }, []);
+
     return (
-        <GameWrapper backgroundColor={backgroundColor}>
-            <GameContainer>
+        <Wrapper backgroundColor={backgroundColor}>
+            <Container>
                 <ChangeColor
                     onClick={handleChangeBackgroundColor}
                     activeColor={backgroundColor}
                 />
-
-                <Hash />
-            </GameContainer>
-        </GameWrapper>
+                {!!selectedCharacter ? (
+                    <Game selectedCharacter={selectedCharacter} />
+                ) : (
+                    <SelectCharacter onClick={handleSelectCharacter} />
+                )}
+            </Container>
+        </Wrapper>
     );
 };
 
-export default Game;
+export default Main;

@@ -16,7 +16,7 @@ const CercleIcon = (props: IIconProps) => (
             r="46"
             fill="transparent"
             strokeWidth={8}
-            stroke={props.color}
+            stroke="currentColor"
         />
     </svg>
 );

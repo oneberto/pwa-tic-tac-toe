@@ -8,5 +8,6 @@ export enum ThemeColors {
 }
 
 export enum SystemColors {
-    Border = "rgba(255, 255, 255, 0.5)"
+    Border = "rgba(255, 255, 255, 0.5)",
+    Hover = "rgba(255, 255, 255, 0.06)"
 }

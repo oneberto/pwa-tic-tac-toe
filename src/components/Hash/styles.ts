@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import MediaQueries from "../../assets/mediaQueries";
 import { SystemColors } from "../../assets/colors";
+import { zoomIn } from "../../assets/animations";
 
 export const HashWrapper = styled.div`
     flex: 1;
@@ -9,6 +10,7 @@ export const HashWrapper = styled.div`
     justify-content: center;
     width: 100%;
     height: 100%;
+    animation: ${zoomIn} 0.2s ease-in;
 `;
 
 export const HashContainer = styled.div`

@@ -18,6 +18,7 @@ const ChangeColor = ({ onClick, activeColor }: IProps) => {
         <ChangeColorContainer>
             {colors.map(color => (
                 <ChangeColorButton
+                    key={color}
                     backgroundColor={color}
                     active={activeColor === color}
                     onClick={() => onClick(color)}

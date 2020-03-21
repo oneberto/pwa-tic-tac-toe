@@ -3,14 +3,14 @@ import React from "react";
 // Assets
 import GlobalStyles from "./assets/global";
 
-// Pages
-import Game from "./pages/Game";
+// Screens
+import Main from "./screens/Main";
 
 const App = () => {
     return (
         <>
             <GlobalStyles />
-            <Game />
+            <Main />
         </>
     );
 };

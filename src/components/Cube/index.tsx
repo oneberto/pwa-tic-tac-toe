@@ -3,16 +3,18 @@ import { CubeContainer, CubeButton } from "./styles";
 import CercleIcon from "../Icons/Circle";
 import XIcon from "../Icons/X";
 import { SystemColors } from "../../assets/colors";
+import Character from "../../assets/characteres";
 
 interface IProps {
-    icon?: "x" | "circle";
+    icon?: Character | string;
+    onClick(): void;
 }
 
-const Cube = ({ icon }: IProps) => {
+const Cube = ({ icon, onClick }: IProps) => {
     return (
         <CubeContainer>
-            <CubeButton>
-                {icon === "circle" && (
+            <CubeButton onClick={onClick}>
+                {icon === Character.Cercle && (
                     <CercleIcon
                         width="100%"
                         height="100%"
@@ -20,7 +22,7 @@ const Cube = ({ icon }: IProps) => {
                     />
                 )}
 
-                {icon === "x" && (
+                {icon === Character.X && (
                     <XIcon
                         width="100%"
                         height="100%"
